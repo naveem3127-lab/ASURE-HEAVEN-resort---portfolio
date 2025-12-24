@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Haven Resort</title>
+    
+    <!-- Tailwind CSS (via CDN for standalone usage) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', /* Deep Blue */
+                        secondary: '#d4af37', /* Gold */
+                        darkbg: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Mulish', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Mulish:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-slate-900 transition-colors duration-500" id="body-element">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-6 transition-all duration-300">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="#" class="font-display text-2xl font-bold tracking-wider text-white drop-shadow-md">
+                AZURE <span class="text-secondary">HAVEN</span>
+            </a>
+            
+           <div class="hidden md:flex items-center gap-8">
+    <a href="index.html" class="text-sm uppercase tracking-widest text-white hover:text-secondary transition-colors font-medium drop-shadow-sm">Home</a>
+    <a href="rooms.html" class="text-sm uppercase tracking-widest text-white/90 hover:text-secondary transition-colors drop-shadow-sm">Accommodations</a>
+        <a href="dining.html" class="text-sm uppercase tracking-widest text-white/90 hover:text-secondary transition-colors drop-shadow-sm">Dining</a>
+    <a href="events.html" class="text-sm uppercase tracking-widest text-white/90 hover:text-secondary transition-colors drop-shadow-sm">Events</a>
+    <a href="booking.html" class="bg-secondary hover:bg-yellow-600 text-slate-900 font-serif italic px-6 py-2 rounded-full transition-colors inline-block">
+        Book Now
+    </a>
+</div>
+            
+            <button class="md:hidden text-white">
+    <i data-lucide="menu"></i>
+</button>  
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative h-screen w-full overflow-hidden">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+            <!-- Replace src with your local video path -->
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="slow_motion_luxury_resort_interior_opening_to_beach_view.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 animate-fade-in-up">
+            <h2 class="text-secondary uppercase tracking-[0.2em] text-sm md:text-base mb-4 font-bold">
+                Welcome to Paradise
+            </h2>
+            <h1 class="font-display text-5xl md:text-7xl lg:text-9xl text-white font-bold tracking-tight mb-6 drop-shadow-lg">
+                AZURE HAVEN
+            </h1>
+            <p class="text-white/90 max-w-2xl mx-auto text-lg md:text-xl font-serif italic mb-10 text-shadow">
+                Where the golden sands meet the midnight sky. Experience the ultimate luxury escape.
+            </p>
+        </div>
+
+        <!-- Mode Toggles (Floating) -->
+        <div class="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 hidden md:flex flex-col gap-4">
+            <button onclick="setMode('day')" class="p-3 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white hover:text-primary transition-all">
+                <i data-lucide="sun"></i>
+            </button>
+            <button onclick="setMode('night')" class="p-3 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-primary hover:text-secondary transition-all">
+                <i data-lucide="moon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Booking Widget -->
+    <div class="relative z-20 -mt-24 px-4">
+        <div class="w-full max-w-5xl mx-auto bg-white/95 backdrop-blur-sm shadow-2xl rounded-xl p-6 md:p-8">
+            <h3 class="font-display text-2xl text-primary mb-6 text-center">Start Your Journey</h3>
+            <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+                <div class="space-y-2">
+                    <label class="text-xs uppercase tracking-wider text-gray-500">Destination</label>
+                    <div class="relative flex items-center border border-gray-200 rounded-md p-2">
+                        <i data-lucide="map-pin" class="text-secondary w-4 h-4 mr-2"></i>
+                        <input type="text" placeholder="Where from?" class="bg-transparent outline-none text-sm w-full">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs uppercase tracking-wider text-gray-500">Check-in</label>
+                    <div class="relative flex items-center border border-gray-200 rounded-md p-2">
+                        <i data-lucide="calendar" class="text-secondary w-4 h-4 mr-2"></i>
+                        <input type="date" class="bg-transparent outline-none text-sm w-full">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs uppercase tracking-wider text-gray-500">Guests</label>
+                    <div class="relative flex items-center border border-gray-200 rounded-md p-2">
+                        <i data-lucide="user" class="text-secondary w-4 h-4 mr-2"></i>
+                        <select class="bg-transparent outline-none text-sm w-full">
+                            <option>2 Guests</option>
+                            <option>1 Guest</option>
+                            <option>4 Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs uppercase tracking-wider text-gray-500">Duration</label>
+                    <div class="relative flex items-center border border-gray-200 rounded-md p-2">
+                        <i data-lucide="clock" class="text-secondary w-4 h-4 mr-2"></i>
+                        <select class="bg-transparent outline-none text-sm w-full">
+                            <option>3 Nights</option>
+                            <option>5 Nights</option>
+                            <option>1 Week</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="w-full bg-primary hover:bg-blue-900 text-white h-full py-2 rounded-md font-serif transition-colors">
+                    Check Availability
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Experience Section (Toggle Logic Here) -->
+    <section class="py-24 px-4 transition-colors duration-500" id="experience-section">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+                <div>
+                    <h2 id="exp-title" class="font-display text-4xl md:text-5xl text-primary mb-4 transition-all">
+                        Sun-Kissed Days
+                    </h2>
+                    <p id="exp-desc" class="text-gray-600 max-w-lg text-lg transition-all">
+                        Bask in the warm glow of the tropical sun. Embrace adventure or pure relaxation by the shore.
+                    </p>
+                </div>
+                <div class="flex bg-gray-200 p-1 rounded-lg">
+                    <button onclick="setMode('day')" id="btn-day" class="px-6 py-2 rounded-md font-medium text-sm flex items-center gap-2 bg-white shadow-sm text-primary transition-all">
+                        <i data-lucide="sun" class="w-4 h-4"></i> Day Experience
+                    </button>
+                    <button onclick="setMode('night')" id="btn-night" class="px-6 py-2 rounded-md font-medium text-sm flex items-center gap-2 text-gray-500 hover:text-primary transition-all">
+                        <i data-lucide="moon" class="w-4 h-4"></i> Night Experience
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Feature Image -->
+            <div class="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl group">
+                <img id="main-image" src="luxury_resort_exteri_6052f0c6.jpg" alt="Resort View" class="w-full h-full object-cover transition-transform duration-1000 transform group-hover:scale-105">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 md:p-12 z-10">
+                    <h3 id="image-caption" class="text-white font-serif text-3xl italic">
+                        Relax by the Shore
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="py-24 bg-gray-100 transition-colors duration-500" id="activities-section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span id="act-subtitle" class="text-secondary uppercase tracking-widest font-bold text-xs mb-2 block">Activities</span>
+                <h2 id="act-title" class="font-display text-4xl text-primary">Endless Adventures</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="activities-grid">
+                <!-- Activity 1 -->
+                <div class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer">
+                    <img id="act-img-1" src="paragliding_over_tro_6a122b0b.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-white">
+                        <div class="flex items-center gap-2 text-secondary mb-2">
+                            <i data-lucide="wind" id="act-icon-1"></i>
+                            <span id="act-cat-1" class="uppercase tracking-widest text-xs font-bold">Adventure</span>
+                        </div>
+                        <h3 id="act-head-1" class="font-display text-3xl mb-2">Sky High Thrills</h3>
+                        <p id="act-desc-1" class="text-white/80 max-w-xs">Experience the thrill of paragliding over the azure ocean.</p>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer">
+                    <img id="act-img-2" src="woman_sunbathing_on__cc19966c.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-white">
+                        <div class="flex items-center gap-2 text-secondary mb-2">
+                            <i data-lucide="umbrella" id="act-icon-2"></i>
+                            <span id="act-cat-2" class="uppercase tracking-widest text-xs font-bold">Relaxation</span>
+                        </div>
+                        <h3 id="act-head-2" class="font-display text-3xl mb-2">Sun-Kissed Bliss</h3>
+                        <p id="act-desc-2" class="text-white/80 max-w-xs">Unwind on our pristine private beaches with premium service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-200 transition-colors duration-500" id="footer">
+        <div class="container mx-auto text-center">
+            <h2 class="font-display text-2xl font-bold text-primary mb-4">AZURE HAVEN</h2>
+            <p class="text-gray-500">© 2025 Azure Haven Resorts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>

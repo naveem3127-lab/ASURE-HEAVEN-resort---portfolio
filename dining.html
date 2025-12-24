@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining - Azure Haven Resort</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#d4af37',
+                        darkbg: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Mulish', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Mulish:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 py-4 bg-slate-900/90 backdrop-blur-md shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="font-display text-2xl font-bold tracking-wider text-white drop-shadow-md">
+                AZURE <span class="text-secondary">HAVEN</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm uppercase tracking-widest text-white/90 hover:text-secondary transition-colors drop-shadow-sm">Home</a>
+                <a href="rooms.html" class="text-sm uppercase tracking-widest text-white/90 hover:text-secondary transition-colors drop-shadow-sm">Accommodations</a>
+                <a href="dining.html" class="text-sm uppercase tracking-widest text-secondary font-semibold transition-colors drop-shadow-sm">Dining</a>
+                <a href="events.html" class="text-sm uppercase tracking-widest text-white/90 hover:text-secondary transition-colors drop-shadow-sm">Events</a>
+               <a href="booking.html" class="bg-secondary hover:bg-yellow-600 text-slate-900 font-serif italic px-6 py-2 rounded-full transition-colors inline-block">
+        Book Now
+    </a>
+            </div>
+            
+            <button class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="pt-32 pb-16 px-4 bg-gray-200">
+        <div class="container mx-auto text-center animate-fade-in-up">
+            <h1 class="font-display text-5xl text-primary mb-6">Dining Experiences</h1>
+            <p class="text-xl text-gray-600 font-serif italic max-w-2xl mx-auto">
+                Indulge in world-class culinary experiences across our exquisite dining venues.
+            </p>
+        </div>
+    </div>
+
+    <!-- Dining Options Grid -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Dining 1: Swimming Pool Dining -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <img src="\exotic-lunch-hotel-outdoor-shot-table-with-fruits-swimming-pool_197531-20911.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <button class="w-full bg-white/90 text-primary py-2 rounded font-bold hover:bg-white">Reserve Table</button>
+                    </div>
+                </div>
+                <div class="p-6 flex-grow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-primary mb-1">Swimming Pool Dining</h3>
+                            <p class="text-sm text-gray-500 font-medium">Casual Luxury</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-serif font-bold text-secondary">$65</p>
+                            <p class="text-xs text-gray-400 uppercase tracking-wide">/ Per Person</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Dine poolside with refreshing cocktails and Mediterranean cuisine. Perfect for a relaxed lunch or casual dinner with stunning water views.
+                    </p>
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Features</p>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-gray-500">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Pool View</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Casual Dress</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Cocktail Bar</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Family Friendly</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-3 text-center border-t border-blue-100">
+                    <p class="text-xs text-blue-700 font-medium flex items-center justify-center gap-2">
+                        <i data-lucide="sparkles" class="w-3 h-3"></i> Best for Groups & Families
+                    </p>
+                </div>
+            </div>
+
+            <!-- Dining 2: Multi-Cuisine Restaurant -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300 flex flex-col h-full relative">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <img src="\15 best multi-cuisine restaurants in Mumbai, New Delhi, Bengaluru, Kolkata and Goa.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i> Premium
+                        </span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <button class="w-full bg-white/90 text-primary py-2 rounded font-bold hover:bg-white">Reserve Table</button>
+                    </div>
+                </div>
+                <div class="p-6 flex-grow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-primary mb-1">Multi-Cuisine Restaurant</h3>
+                            <p class="text-sm text-gray-500 font-medium">Fine Dining Excellence</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-serif font-bold text-secondary">$120</p>
+                            <p class="text-xs text-gray-400 uppercase tracking-wide">/ Per Person</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Savor international cuisines crafted by award-winning chefs. Elegant ambiance with exceptional service for an unforgettable culinary journey.
+                    </p>
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Features</p>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-gray-500">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Award-Winning Chefs</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Fine Dining</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Wine Selection</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Ocean View</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-amber-50 p-3 text-center border-t border-amber-100">
+                    <p class="text-xs text-amber-700 font-medium flex items-center justify-center gap-2">
+                        <i data-lucide="sparkles" class="w-3 h-3"></i> Perfect for Special Occasions
+                    </p>
+                </div>
+            </div>
+
+            <!-- Dining 3: Beach Bar & Grill -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <img src="\chill-beach-bar-and-grill.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <button class="w-full bg-white/90 text-primary py-2 rounded font-bold hover:bg-white">Reserve Table</button>
+                    </div>
+                </div>
+                <div class="p-6 flex-grow">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-primary mb-1">Beach Bar & Grill</h3>
+                            <p class="text-sm text-gray-500 font-medium">Tropical Vibes</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-serif font-bold text-secondary">$45</p>
+                            <p class="text-xs text-gray-400 uppercase tracking-wide">/ Per Person</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Enjoy fresh grilled seafood and tropical drinks with your toes in the sand. Sunset dining at its finest on our pristine private beach.
+                    </p>
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Features</p>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-gray-500">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Beachfront</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Fresh Seafood</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Tropical Cocktails</div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-secondary"></i> Sunset Views</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-orange-50 p-3 text-center border-t border-orange-100">
+                    <p class="text-xs text-orange-700 font-medium flex items-center justify-center gap-2">
+                        <i data-lucide="sparkles" class="w-3 h-3"></i> Casual Beach Atmosphere
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="bg-primary text-white py-16 text-center">
+         <div class="container mx-auto px-4">
+           <h2 class="font-display text-3xl mb-6">Ready to Book Your Dining Experience?</h2>
+           <p class="mb-8 text-white/80 max-w-xl mx-auto">Reserve your table and prepare for an unforgettable culinary journey.</p>
+            <a href="booking.html"class="bg-secondary text-primary hover:bg-white hover:text-primary font-bold rounded-full px-12 py-3 transition-colors">
+             Make a Reservation
+            </a>
+         </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-200">
+        <div class="container mx-auto text-center">
+            <h2 class="font-display text-2xl font-bold text-primary mb-4">AZURE HAVEN</h2>
+            <p class="text-gray-500">© 2025 Azure Haven Resorts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script to load icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
